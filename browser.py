@@ -15,7 +15,7 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import ProxyType
 
-driver = webdriver.PhantomJS(executable_path=config.get('driver.path', '/user/local/bin/phantomjs'))
+driver = webdriver.PhantomJS(executable_path=config.get('driver.path', '/usr/local/bin/phantomjs'))
 driver.implicitly_wait(3)
 driver.set_page_load_timeout(8)
 driver.set_script_timeout(10)

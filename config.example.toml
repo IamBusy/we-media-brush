@@ -2,7 +2,7 @@
 url='http://localhost:8000'
 
 [driver]
-path='/user/local/bin/phantomjs'
+path='/usr/local/bin/phantomjs'
 
 [channel.toutiao]
 page_ids = []
