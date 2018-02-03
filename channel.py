@@ -46,9 +46,16 @@ class Channel(threading.Thread):
         http_proxy = '%s:%s' % (proxy[0], proxy[1])
         num = 0
         while True:
-            print('[%s] visiting: %d' % (self.name, num))
-            num += 1
-            for page_id in self.pages:
-                self.actor.act({'id': page_id}, http_proxy)
+            try:
+                print('[%s] visiting: %d' % (self.name, num))
+                for page_id in self.pages:
+                    self.actor.act({'id': page_id}, http_proxy)
+                num += 1
+            except Exception as e:
+                print('[%s] Error occur at %dth visiting:' % (self.name, num))
+                print(e)
+                pass
+
+
 
 
