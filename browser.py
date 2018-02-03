@@ -10,12 +10,12 @@
 @time: 31/01/2018 17:09
 """
 
-from user_agent import generate_user_agent
+import config
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.proxy import ProxyType
 
-driver = webdriver.PhantomJS(executable_path='/usr/local/bin/phantomjs')
+driver = webdriver.PhantomJS(executable_path=config.get('driver.path', '/user/local/bin/phantomjs'))
 driver.implicitly_wait(3)
 driver.set_page_load_timeout(8)
 driver.set_script_timeout(10)

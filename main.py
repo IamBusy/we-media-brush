@@ -24,7 +24,7 @@ proxies = []
 
 def build_ip_pool():
     global proxies
-    resp = requests.get('http://localhost:8000/')
+    resp = requests.get(config.get('proxypool.url', 'http://localhost:8000/'))
     proxies = json.loads(resp.text)
 
 
