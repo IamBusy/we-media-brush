@@ -1,0 +1,4 @@
+user_agent==0.1.9
+toml==0.9.4
+selenium==3.8.1
+requests==2.18.4
