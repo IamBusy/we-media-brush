@@ -42,11 +42,11 @@ class Channel(threading.Thread):
 
     def run(self):
         print('Start thread...')
-        proxy = self.get_proxy()
-        http_proxy = '%s:%s' % (proxy[0], proxy[1])
         num = 0
         while True:
             try:
+                proxy = self.get_proxy()
+                http_proxy = '%s:%s' % (proxy[0], proxy[1])
                 print('[%s] visiting: %d' % (self.name, num))
                 for page_id in self.pages:
                     self.actor.act({'id': page_id}, http_proxy)
